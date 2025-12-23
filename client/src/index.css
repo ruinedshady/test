@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Pastel Pink Theme */
+  --font-body: 'Nunito', sans-serif;
+  --font-display: 'Pacifico', cursive;
+
+  /* Soft Pink Background */
+  --background: 350 100% 98%;
+  /* Warm Brown/Grey Text for softness */
+  --foreground: 15 10% 30%;
+
+  /* Pop Pink for main elements */
+  --primary: 340 85% 65%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Softer Pink for secondary elements */
+  --secondary: 350 100% 92%;
+  --secondary-foreground: 340 60% 45%;
+
+  /* White cards */
+  --card: 0 0% 100%;
+  --card-foreground: 15 10% 30%;
+
+  /* Muted elements */
+  --muted: 350 30% 95%;
+  --muted-foreground: 350 10% 60%;
+
+  /* Borders */
+  --border: 350 50% 90%;
+  --input: 350 50% 90%;
+  --ring: 340 85% 65%;
+
+  /* Radius */
+  --radius: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 240, 245, 0) 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply text-primary font-normal;
+  }
+}
+
+/* Custom Scrollbar for cuteness */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(350 100% 98%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(350 60% 85%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(340 85% 65%);
+}
+
+.heart-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
